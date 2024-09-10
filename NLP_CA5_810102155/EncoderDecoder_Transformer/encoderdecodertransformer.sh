@@ -1,0 +1,23 @@
+fairseq-train /home/mahdi/Documents/NlpUt/NLP_CA5_810102155/preprocess/data_bin/ \
+  --fp16 \
+  --task translation \
+  --arch transformer \
+  --encoder-layers 6 \
+  --decoder-layers 6 \
+  --encoder-embed-dim 512 \
+  --decoder-embed-dim 512 \
+  --encoder-ffn-embed-dim 2048 \
+  --decoder-ffn-embed-dim 2048 \
+  --encoder-attention-heads 8 \
+  --decoder-attention-heads 8 \
+  --max-tokens 4000 \
+  --max-sentences 32 \
+  --max-epoch 5 \
+  --dropout 0.2 \
+  --optimizer adam \
+  --lr 0.0005 \
+  --lr-scheduler inverse_sqrt \
+  --warmup-updates 4000 \
+  --weight-decay 0.0001 \
+  --clip-norm 0.1 \
+  --save-dir ./encoderdecodertransformer/

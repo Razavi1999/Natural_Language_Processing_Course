@@ -1,0 +1,20 @@
+fairseq-train ../preprocess/data_bin/ \
+    --cpu \
+    --task translation \
+    --arch lstm \
+    --encoder-layers 6 \
+    --decoder-layers 6 \
+    --encoder-hidden-size 512 \
+    --decoder-hidden-size 512 \
+    --max-tokens 4000 \
+    --max-sentences 32 \
+    --criterion label_smoothed_cross_entropy \
+    --label-smoothing 0.1 \
+    --dropout 0.2 \
+    --optimizer adam \
+    --lr 0.0005 \
+    --lr-scheduler inverse_sqrt \
+    --warmup-updates 4000 \
+    --weight-decay 0.0001 \
+    --clip-norm 0.1 \
+    --save-dir ./EncoderDecoderLSTM/ \
